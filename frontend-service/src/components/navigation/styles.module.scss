@@ -1,0 +1,12 @@
+.navContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;    
+    box-sizing: border-box;
+    padding: 20px;
+    label{
+        font-weight: bolder;
+        font-size: 15px;
+    }
+}

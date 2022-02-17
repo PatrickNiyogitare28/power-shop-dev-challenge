@@ -5,14 +5,14 @@ import style from './App.scss';
 import { routes } from '@routes/index';
 
 export const App = (): JSX.Element => (
-  <div className={style.componentWrapper}>
+  <div>
     <Router>
-      <h2>Hello App</h2>
+      {/* <h2>Hello App</h2>
       <nav className={style.routingWrapper}>
         <b>Routing: </b>
         <Link to="/">Hello</Link>
         <Link to="/world">World</Link>
-      </nav>
+      </nav> */}
       <div>
         {routes.map((route, index) => (
           <Route key={index} {...route} />

@@ -1,0 +1,30 @@
+.tableContainer{
+    width: 90%;
+    border-radius: 10px;
+    border: 1px solid rgb(212, 212, 212);
+    padding: 20px 40px;
+    table{
+        padding: 20px;
+        width: 100%;
+        tr{
+            margin-top: 2em;
+            height: 50px;
+        }
+        
+        tr:nth-child(even){
+            background-color: rgba(128, 128, 128, 0.123);
+        }
+        th,td{
+            text-align: center;
+        }
+        thead{
+            th{
+                font-weight: bolder;
+            }
+            tr{
+                background-color: black;
+                color: white;;
+            }
+        }
+    }
+}

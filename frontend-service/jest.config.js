@@ -3,6 +3,7 @@ module.exports = {
   moduleNameMapper: {
     '\\.scss$': 'identity-obj-proxy',
     '^@components/(.*)$': '<rootDir>/src/components/$1',
+    '^@views/(.*)$': '<rootDir>/src/views/$1'
   },
   collectCoverageFrom: ['<rootDir>/**/*.{ts, tsx}'],
   roots: ['<rootDir>'],

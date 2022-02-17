@@ -1,0 +1,16 @@
+.inputWrapper{
+    input{
+      padding: 3em;
+      margin-top: 2em;
+      width: 80%;
+      border-radius: 20px;
+      border: 3px solid gray;
+      &:focus{
+        outline: none;
+        border: 3px solid black;
+      }
+      ::placeholder{
+          font-size: 3em;
+      }
+    }
+}

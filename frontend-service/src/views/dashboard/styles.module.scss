@@ -1,0 +1,20 @@
+.dashboardContainer{
+    box-sizing: border-box;
+    width: 99vw;
+    .contentWrapper{
+        padding: 2% 3%;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5%;
+        h1{
+            font-size: 18px;
+            font-weight: bolder;
+        }
+       .transactionsWrapper{
+           width: 50%;
+       }
+       .transactionWrapper{
+        width: 40%;
+    }
+    }
+}

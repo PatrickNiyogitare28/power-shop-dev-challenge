@@ -1,6 +1,6 @@
-# React TS Testing Challenge
+# Power shop frontend services
 
-It's a template for React application with Typescript, Jest library and other stuff that can be helpful for You - feel free to use it!
+This is the frontend services for power shop app
  
 1. [Instalation steps](#instalation) 
 2. [Available scripts](#scripts)
@@ -13,15 +13,17 @@ It's a template for React application with Typescript, Jest library and other st
 
 1. Clone this repository to destination folder.
 
-`git clone https://github.com/PatrickNiyogitare28/react-ts-testing-challange.git`
+`git clone https://github.com/PatrickNiyogitare28/power-shop-dev-challenge.git`
 
-2. Install dependencies.
+2. Navigate to `frontend-service`
 
-`npm install`
+3. Install dependencies.
 
-3. Run local environment.
+`yarn install`
 
-`npm start`
+4. Run local environment.
+
+`yarn start`
 
 <a name="scripts" />
 

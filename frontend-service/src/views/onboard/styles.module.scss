@@ -1,0 +1,27 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10%;   
+
+    box-sizing: border-box;
+    h1{
+        font-size: 5em;
+        font-weight: bolder !important;
+    }
+    button{
+        padding: 1.5em;
+        width: 300px;
+        margin-top: 2em;
+        color: white;
+        background-color: black;
+        border-width: 0px;
+        border-radius: 20px;
+        font-size: 1em;
+        font-weight: bolder;
+        &:hover{
+            transform: scale(1.02);
+            cursor: pointer;
+        }
+    }
+}
