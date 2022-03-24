@@ -27,9 +27,6 @@
   ],
   "author": "patrickniyogitare28@gmail.com",
   "license": "ISC",
-  "bugs": {
-    "url": "issue-url"
-  },
   "homepage": "home-page-url",
   "husky": {
     "hooks": {
