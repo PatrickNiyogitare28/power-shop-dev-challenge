@@ -1,0 +1,42 @@
+version: '2'
+services:
+  server:
+    build:
+      context: ./server/
+    command: npm run start
+    volumes:
+      - ./server/:/usr/app
+      - /usr/app/node_modules
+    ports:
+      - "5080:5080"
+    # env_file: ./server/.env # TODO - uncomment this to auto-load your .env file!
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+      - PORT=3000
+      - API_VERSION=v1
+      - DEV_DATABASE_URL=postgres://postgres:postgres@127.0.0.1:5432/electricity_shop_dev_db
+      - TEST_DATABASE_URL=postgres://postgres:postgres@127.0.0.1:5432/electricity_shop_test_db
+      - JWT_KEY=iiG2tHyGSHS3nVwE_PpLQg.0vE6rKH
+      - PROJECTEMAIL=email@gmail.com
+      - PASSWORD=postgres 
+      - FRONTEND_URL= localhost://8000
+      - BACKEND_URL=http://localhost:5000
+      - SENDGRID_API_KEY=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
+      - ADMIN_PASSWORD=anyPassword
+      - BASE_URL=/api/v1
+      - CLOUDINARY_CLOUD_NAME=johdoe
+      - CLOUDINARY_API_KEY=942695815398984
+      - CLOUDINARY_API_SECRET=-KXq7cox83-RBRjSa7HnbwXd21w
+      - clientID=12cl
+  client:
+    build:
+      context: ./client/
+    command: npm start
+    volumes:
+      - ./client/:/usr/app
+      - /usr/app/node_modules
+    depends_on:
+      - server
+    ports:
+      - "8000:8000"
