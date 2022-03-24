@@ -1,16 +1,5 @@
 version: '2'
 services:
-  db:
-      image: postgres:14.1-alpine
-      restart: always
-      environment:
-        - POSTGRES_USER=postgres
-        - POSTGRES_PASSWORD=postgres
-      ports:
-        - '5432:5432'
-      volumes: 
-        - db:/var/lib/postgresql/data
-        - ./db/init.sql:/docker-entrypoint-initdb.d/create_tables.sql
   server:
     build:
       context: ./server/
@@ -18,18 +7,17 @@ services:
     volumes:
       - ./server/:/usr/app
       - /usr/app/node_modules
-    depends_on:
-      - db
     ports:
       - "5000:5080"
     # env_file: ./server/.env # TODO - uncomment this to auto-load your .env file!
+    hostname: api
     environment:
       - NODE_ENV=development
       - CHOKIDAR_USEPOLLING=true
       - PORT=3000
       - API_VERSION=v1
-      - DEV_DATABASE_URL=postgres://postgres:postgres@127.0.0.1:5432/electricity_shop_dev_db
-      - TEST_DATABASE_URL=postgres://postgres:postgres@127.0.0.1:5432/electricity_shop_test_db
+      - DEV_DATABASE_URL=postgres://postgres:postgres@db:5432/electricity_shop_dev_db
+      - TEST_DATABASE_URL=postgres://postgres:postgres@db:5432/electricity_shop_test_db
       - JWT_KEY=iiG2tHyGSHS3nVwE_PpLQg.0vE6rKH
       - PROJECTEMAIL=email@gmail.com
       - PASSWORD=postgres 
@@ -52,7 +40,15 @@ services:
     depends_on:
       - server
     ports:
-      - "8000:8000"
+      - "8080:8080"
+  nginx:
+    image: "patrickniyo/nginx"
+    mem_limit: 128m
+    hostname: nginx
+    depends_on:
+      - client
+    ports:
+      - "80:80"
 volumes:
   db:
     driver: local
